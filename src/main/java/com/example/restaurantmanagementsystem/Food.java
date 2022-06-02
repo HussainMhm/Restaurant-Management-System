@@ -13,4 +13,16 @@ public class Food {
         this.price = price;
         // this.image also
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public float getPrice() {
+        return price;
+    }
 }
