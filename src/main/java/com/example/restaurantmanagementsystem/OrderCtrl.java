@@ -32,7 +32,7 @@ public class OrderCtrl implements Initializable {
     Alert alert;
 
     public void order(){
-        if (customerName.getText() == null || foodChoice.getValue() == null || quantity.getValue() == null){
+        if (customerName.getText().equals("") || foodChoice.getValue() == null || quantity.getValue() == null){
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Failed");
