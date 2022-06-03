@@ -17,5 +17,6 @@
       <TextField fx:id="foodPrice" alignment="CENTER" layoutX="220.0" layoutY="207.0" promptText="Food Price" />
       <TextField fx:id="foodCategory" alignment="CENTER" layoutX="220.0" layoutY="245.0" promptText="Food Category" />
       <Button fx:id="addFoodBtn" layoutX="220.0" layoutY="281.0" mnemonicParsing="false" onAction="#addFood" prefHeight="26.0" prefWidth="160.0" text="ADD" />
+      <Button fx:id="backBtn" layoutX="36.0" layoutY="346.0" mnemonicParsing="false" onAction="#back" text="Back" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -16,8 +17,14 @@ public class OrderCtrl {
     private Button orderBtn;
     @FXML
     private TextField total;
+    @FXML
+    private Button backBtn;
 
     public void order(){
         System.out.println("ORDER MADE");
+    }
+
+    public void back(ActionEvent event){
+        Initialize.navigate(event, "AdminDashboard.fxml");
     }
 }

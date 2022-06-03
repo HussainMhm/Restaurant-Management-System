@@ -1,5 +1,6 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -17,6 +18,8 @@ public class AddFoodCtrl {
     private Button addFoodBtn;
     // something to upload image
     // ...
+    @FXML
+    private Button backBtn;
 
     public void addFood(){
         System.out.println("Food is added");
@@ -31,5 +34,9 @@ public class AddFoodCtrl {
 //        System.out.println(foodList.get(1).getName());
 //        System.out.println(foodList.get(1).getPrice());
 //        System.out.println(foodList.get(1).getCategory());
+    }
+
+    public void back(ActionEvent event){
+        Initialize.navigate(event, "AdminDashboard.fxml");
     }
 }
