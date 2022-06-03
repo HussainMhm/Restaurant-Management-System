@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 
 import static com.example.restaurantmanagementsystem.Kitchen.foodList;
 
-
 public class CustomerScreenCtrl implements Initializable {
     @FXML
     private Button backBtn;
@@ -28,23 +27,30 @@ public class CustomerScreenCtrl implements Initializable {
 
     @FXML
     private TableView<Food> mealsStackTable;
-
-    Stack stack = new Stack();
-    public void addFoodToStack(){
-        for (Food food : foodList){
-            stack.push(food);
-            System.out.println(stack.getSize());
-        }
-
-    }
-
-    ObservableList<Food> list = FXCollections.observableArrayList();
-
     @FXML
     private TableColumn<Food, String> foodNameColumn;
     @FXML
     private TableColumn<Food, Float> foodPriceColumn;
 
+    Stack stack = new Stack();
+    ObservableList<Food> list = FXCollections.observableArrayList();
+
+    public void addFoodToStack(){
+        for (Food food : foodList)
+            stack.push(food);
+
+        int stackSize = stack.getSize();
+        for (int i = 0; i < stackSize; i++)
+            list.add(stack.pop());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        addFoodToStack();
+        foodNameColumn.setCellValueFactory(new PropertyValueFactory<Food, String>("name"));
+        foodPriceColumn.setCellValueFactory(new PropertyValueFactory<Food, Float>("price"));
+        mealsStackTable.setItems(list);
+    }
 
     public void navigateMenuPage(ActionEvent event){
         Initialize.navigate(event, "Menu.fxml");
@@ -54,21 +60,7 @@ public class CustomerScreenCtrl implements Initializable {
         Initialize.navigate(event, "Gallery.fxml");
     }
 
-    public void back(ActionEvent event){
+    public void navigateBack(ActionEvent event){
         Initialize.navigate(event, "AdminDashboard.fxml");
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        addFoodToStack();
-        int stackSize = stack.getSize();
-        for (int i = 0; i < stackSize; i++){
-            list.add(stack.pop());
-        }
-
-        foodNameColumn.setCellValueFactory(new PropertyValueFactory<Food, String>("name"));
-        foodPriceColumn.setCellValueFactory(new PropertyValueFactory<Food, Float>("price"));
-
-        mealsStackTable.setItems(list);
     }
 }
