@@ -10,5 +10,6 @@
       <Button fx:id="orderPage" layoutX="213.0" layoutY="118.0" mnemonicParsing="false" onAction="#navigateOrderPage" prefHeight="48.0" prefWidth="174.0" text="Place Order" />
       <Button fx:id="newFoodPage" layoutX="213.0" layoutY="176.0" mnemonicParsing="false" onAction="#navigateFoodPage" prefHeight="48.0" prefWidth="174.0" text="Add New Food" />
       <Button fx:id="customerScreenPage" layoutX="213.0" layoutY="237.0" mnemonicParsing="false" onAction="#navigateCustomerPage" prefHeight="48.0" prefWidth="174.0" text="Customer Screen" />
+      <Button layoutX="39.0" layoutY="341.0" mnemonicParsing="false" onAction="#signOut" text="Sign out" />
    </children>
 </AnchorPane>
