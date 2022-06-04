@@ -21,7 +21,7 @@
          <font>
             <Font name="Gill Sans" size="14.0" />
          </font></TextField>
-      <Button fx:id="addFoodBtn" alignment="CENTER" layoutX="220.0" layoutY="322.0" mnemonicParsing="false" onAction="#addFood" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #F54B64#F54B64; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
+      <Button fx:id="addFoodBtn" alignment="CENTER" layoutX="220.0" layoutY="322.0" mnemonicParsing="false" onAction="#addFood" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #F54B64#F54B64; -fx-background-radius: 20;" text="Add Meal" textFill="WHITE">
          <font>
             <Font name="Gill Sans" size="14.0" />
          </font></Button>
