@@ -13,6 +13,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static com.example.restaurantmanagementsystem.Kitchen.foodList;
+import static com.example.restaurantmanagementsystem.Kitchen.orderList;
 
 
 public class OrderCtrl implements Initializable {
@@ -41,8 +42,12 @@ public class OrderCtrl implements Initializable {
         }
         else {
             for (Food food : foodList) {
-                if (Objects.equals(food.getName(), foodChoice.getValue()))
+                if (Objects.equals(food.getName(), foodChoice.getValue())){
                     total.setText(String.valueOf(food.getPrice() * quantity.getValue()));
+
+                    Order newOrder = new Order(customerName.getText());
+                    orderList.add(newOrder);
+                }
             }
         }
     }
