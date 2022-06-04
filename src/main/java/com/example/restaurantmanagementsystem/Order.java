@@ -1,7 +1,7 @@
 package com.example.restaurantmanagementsystem;
 
 public class Order {
-    public String customer;
+    private String customer;
 
     public Order(String customerName) {
         this.customer = customerName;

@@ -15,7 +15,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="password" alignment="CENTER" layoutX="212.0" layoutY="251.0" style="-fx-background-color: white; -fx-border-color: #3e619b#3e619b; -fx-border-radius: 10; -fx-border-width: 1;">
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="212.0" layoutY="251.0" onAction="#onEnter" style="-fx-background-color: white; -fx-border-color: #3e619b#3e619b; -fx-border-radius: 10; -fx-border-width: 1;">
          <font>
             <Font size="14.0" />
          </font>

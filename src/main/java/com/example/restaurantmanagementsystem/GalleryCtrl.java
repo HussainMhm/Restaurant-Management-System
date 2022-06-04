@@ -18,9 +18,11 @@ public class GalleryCtrl implements Initializable {
 
     @FXML
     HBox hBox;
-
+    @FXML
     private ImageView imageView;
+    @FXML
     private Button leftBtn;
+    @FXML
     private Button rightBtn;
 
     private int currImageIndex = 0;
@@ -28,9 +30,6 @@ public class GalleryCtrl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hBox.setAlignment(Pos.CENTER);
-
-        leftBtn = new Button("<");
-        rightBtn = new Button(">");
 
         LinkedList<Image> images = new LinkedList<>();
         for (int i = 0; i < pathList.length(); i++)

@@ -21,9 +21,6 @@ public class Queue {
         }
 
         Order x = arr[front];
-
-        System.out.println("Removing " + x);
-
         front = (front + 1) % capacity;
         count--;
 
@@ -35,8 +32,6 @@ public class Queue {
             System.out.println("Overflow\nProgram Terminated");
             System.exit(-1);
         }
-
-        System.out.println("Inserting " + item);
 
         rear = (rear + 1) % capacity;
         arr[rear] = item;

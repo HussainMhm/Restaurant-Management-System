@@ -35,7 +35,7 @@ public class OrderCtrl implements Initializable {
         else {
             for (Food food : foodList) {
                 if (food.getName().equals(foodChoice.getValue())){
-                    total.setText(String.valueOf(food.getPrice() * quantity.getValue()));
+                    total.setText(String.valueOf(food.getPrice() * quantity.getValue()) + " TL");
 
                     Order newOrder = new Order(customerName.getText());
                     orderList.add(newOrder);

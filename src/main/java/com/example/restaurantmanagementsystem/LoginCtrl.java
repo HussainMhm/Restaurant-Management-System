@@ -16,6 +16,10 @@ public class LoginCtrl {
     @FXML
     private Button loginBtn;
 
+    public void onEnter(ActionEvent ae){
+        loginBtn.fire();
+    }
+
     public void navigateAdminDashboard(ActionEvent event) throws IOException {
         if (username.getText().equals("admin") && password.getText().equals("admin"))
             Load.navigate(event, "AdminDashboard.fxml");
