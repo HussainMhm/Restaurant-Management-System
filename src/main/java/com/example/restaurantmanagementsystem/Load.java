@@ -16,16 +16,18 @@ import static com.example.restaurantmanagementsystem.GalleryCtrl.pathList;
 
 public class Load {
     public static void initializeData(){
-        foodList.add(new Food("Kabsa", "Saudi", 60));
+        foodList.add(new Food("Kabsa", "Arabic", 60));
         foodList.add(new Food("Shawarma", "Arabic", 20));
         foodList.add(new Food("Pizza", "Italian", 30));
         foodList.add(new Food("Burger", "American", 40));
         foodList.add(new Food("Kebap", "Turkish", 50));
+        foodList.add(new Food("Çiğ Köfte", "Turkish", 15));
+        foodList.add(new Food("Pasta", "Italian", 35));
 
+        pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p3.jpeg");
         pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p0.jpeg");
         pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p1.jpeg");
         pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p2.jpeg");
-        pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p3.jpeg");
         pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p4.jpeg");
     }
 

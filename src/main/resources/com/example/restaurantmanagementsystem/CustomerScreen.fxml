@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.CustomerScreenCtrl">
    <children>
-      <Button fx:id="menuBtn" layoutX="87.0" layoutY="308.0" mnemonicParsing="false" onAction="#navigateMenuPage" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F54B64; -fx-background-radius: 20;" text="Our Prices" textFill="WHITE">
+      <Button fx:id="menuBtn" layoutX="87.0" layoutY="308.0" mnemonicParsing="false" onAction="#navigateMenuPage" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F54B64; -fx-background-radius: 20;" text="Our Menu" textFill="WHITE">
          <font>
             <Font name="Gill Sans" size="14.0" />
          </font></Button>
