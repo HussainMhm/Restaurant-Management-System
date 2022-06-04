@@ -62,8 +62,7 @@ public class GalleryCtrl implements Initializable {
         hBox.getChildren().addAll(leftBtn, imageView, rightBtn);
     }
 
-    public void back(ActionEvent event){
-        Initialize.navigate(event, "CustomerScreen.fxml");
+    public void navigateBack(ActionEvent event){
+        Load.navigate(event, "CustomerScreen.fxml");
     }
-
 }

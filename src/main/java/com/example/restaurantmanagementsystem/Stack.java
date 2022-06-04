@@ -27,7 +27,6 @@ public class Stack {
             root = newNode;
             newNode.next = temp;
         }
-        System.out.println(data + " pushed to stack");
         size++;
     }
 
@@ -46,7 +45,6 @@ public class Stack {
 
     public Food peek() {
         if (root == null) {
-            System.out.println("Stack is empty");
             return null;
         }
         else {
