@@ -71,14 +71,14 @@ public class CustomerScreenCtrl implements Initializable {
     }
 
     public void navigateMenuPage(ActionEvent event){
-        Initialize.navigate(event, "Menu.fxml");
+        Load.navigate(event, "Menu.fxml");
     }
 
     public void navigateGalleryPage(ActionEvent event){
-        Initialize.navigate(event, "Gallery.fxml");
+        Load.navigate(event, "Gallery.fxml");
     }
 
     public void navigateBack(ActionEvent event){
-        Initialize.navigate(event, "AdminDashboard.fxml");
+        Load.navigate(event, "AdminDashboard.fxml");
     }
 }

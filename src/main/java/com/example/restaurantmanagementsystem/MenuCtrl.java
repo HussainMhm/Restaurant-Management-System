@@ -9,6 +9,6 @@ public class MenuCtrl {
     private Button backBtn;
 
     public void back(ActionEvent event){
-        Initialize.navigate(event, "CustomerScreen.fxml");
+        Load.navigate(event, "CustomerScreen.fxml");
     }
 }

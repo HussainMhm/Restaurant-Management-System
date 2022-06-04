@@ -3,13 +3,11 @@ package com.example.restaurantmanagementsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static com.example.restaurantmanagementsystem.Kitchen.foodList;
@@ -30,30 +28,25 @@ public class OrderCtrl implements Initializable {
     @FXML
     private Button backBtn;
 
-    Alert alert;
-
     public void order(){
         if (customerName.getText().equals("") || foodChoice.getValue() == null || quantity.getValue() == null){
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Failed");
-            alert.setContentText("Choice boxes must be selected");
-            alert.showAndWait();
+            Load.errorAlert("You Didn't Make A Choice.");
         }
         else {
             for (Food food : foodList) {
-                if (Objects.equals(food.getName(), foodChoice.getValue())){
+                if (food.getName().equals(foodChoice.getValue())){
                     total.setText(String.valueOf(food.getPrice() * quantity.getValue()));
 
                     Order newOrder = new Order(customerName.getText());
                     orderList.add(newOrder);
+                    Load.infoAlert("Order placed successfully", "");
                 }
             }
         }
     }
 
-    public void back(ActionEvent event){
-        Initialize.navigate(event, "AdminDashboard.fxml");
+    public void navigateBack(ActionEvent event){
+        Load.navigate(event, "AdminDashboard.fxml");
     }
 
     @Override

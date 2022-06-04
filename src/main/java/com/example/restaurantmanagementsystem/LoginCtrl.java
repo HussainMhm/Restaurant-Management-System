@@ -2,48 +2,28 @@ package com.example.restaurantmanagementsystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class LoginCtrl {
-
     @FXML
-    private TextField username_tf;
+    private TextField username;
     @FXML
-    private PasswordField passwordField;
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    private Alert alert;
+    private PasswordField password;
+    @FXML
+    private Button loginBtn;
 
     public void navigateAdminDashboard(ActionEvent event) throws IOException {
+        if (username.getText().equals("admin") && password.getText().equals("admin"))
+            Load.navigate(event, "AdminDashboard.fxml");
 
-        if (Objects.equals(username_tf.getText(), "admin") && Objects.equals(passwordField.getText(), "admin")){
-            Initialize.navigate(event, "AdminDashboard.fxml");
-        }
-        else if (Objects.equals(username_tf.getText(), "") && Objects.equals(passwordField.getText(), "")){
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Failed");
-            alert.setContentText("Fields cannot be empty");
-            alert.showAndWait();
-        }
-        else {
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Failed");
-            alert.setContentText("Username or password invalid");
-            alert.showAndWait();
-        }
+        else if (username.getText().equals("") && password.getText().equals(""))
+            Load.errorAlert("Fields cannot be empty");
+
+        else
+            Load.errorAlert("Username or password invalid");
     }
 }
