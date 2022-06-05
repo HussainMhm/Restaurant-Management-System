@@ -22,15 +22,17 @@ public class AddFoodCtrl {
 
     Alert alert;
 
+// Function that adds new meals to the kitchen
     public void addFood(){
+        // Check for empty fields
         if (foodName.getText().equals("") || foodPrice.getText().equals("") || foodCategory.getText().equals("")){
             Load.errorAlert("Fields cannot be empty");
         }
-
+        // Check if price is a number
         else if (!Load.isNumeric(foodPrice.getText())){
             Load.errorAlert("Price must be number");
         }
-
+        // Take input and add new meal
         else {
             String name = foodName.getText();
             String category = foodCategory.getText();
@@ -45,7 +47,7 @@ public class AddFoodCtrl {
                     "\nCategory: " + category);
         }
     }
-
+// Navigate to previous page
     public void navigateBack(ActionEvent event){
         Load.navigate(event, "AdminDashboard.fxml");
     }

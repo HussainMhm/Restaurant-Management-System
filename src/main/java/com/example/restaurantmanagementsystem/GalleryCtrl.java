@@ -13,9 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GalleryCtrl implements Initializable {
-
-    static public LinkedList<String> pathList = new LinkedList<>();
-
     @FXML
     HBox hBox;
     @FXML
@@ -25,18 +22,24 @@ public class GalleryCtrl implements Initializable {
     @FXML
     private Button rightBtn;
 
+    static public LinkedList<String> pathList = new LinkedList<>();
     private int currImageIndex = 0;
 
+
+    // Set the settings for gallery viewer
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hBox.setAlignment(Pos.CENTER);
 
+
+        // Take images paths from pathList and add them to linkedList
         LinkedList<Image> images = new LinkedList<>();
         for (int i = 0; i < pathList.length(); i++)
             images.add(new Image(pathList.get(i)));
 
         this.imageView = new ImageView(images.get(currImageIndex));
 
+        // Right arrow
         rightBtn.setOnAction(e -> {
             currImageIndex++;
             if (currImageIndex == pathList.length())
@@ -46,6 +49,7 @@ public class GalleryCtrl implements Initializable {
 
         });
 
+        // Left arrow
         leftBtn.setOnAction(e -> {
             currImageIndex--;
             if (currImageIndex > pathList.length() + 1 || currImageIndex == -1)
@@ -54,6 +58,7 @@ public class GalleryCtrl implements Initializable {
             this.imageView.setImage(images.get(currImageIndex));
         });
 
+        // Width & Height
         this.imageView.setFitHeight(275);
         this.imageView.setFitWidth(350);
 
@@ -61,6 +66,7 @@ public class GalleryCtrl implements Initializable {
         hBox.getChildren().addAll(leftBtn, imageView, rightBtn);
     }
 
+    // navigate to previous page
     public void navigateBack(ActionEvent event){
         Load.navigate(event, "CustomerScreen.fxml");
     }

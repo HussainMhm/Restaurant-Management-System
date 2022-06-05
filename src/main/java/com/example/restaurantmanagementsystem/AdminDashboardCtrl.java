@@ -12,6 +12,7 @@ public class AdminDashboardCtrl {
     @FXML
     private Button customerScreenPage;
 
+    // Navigation functions to other pages
     public void navigateOrderPage(ActionEvent event){
         Load.navigate(event, "Order.fxml");
     }

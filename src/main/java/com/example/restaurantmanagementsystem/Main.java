@@ -1,3 +1,11 @@
+/**
+ * @file Restaurant Management System
+ * @description Simple GUI application where more than 5 data structure type are used.
+ * @assignment Data Structure Project
+ * @date 04/06/2022
+ * @author Hussain Abdullatif - Mohammad Salah
+ */
+
 package com.example.restaurantmanagementsystem;
 
 import javafx.application.Application;

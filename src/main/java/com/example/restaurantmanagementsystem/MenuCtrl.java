@@ -12,7 +12,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -41,10 +40,7 @@ public class MenuCtrl implements Initializable {
 
     boolean dec;
 
-    public void navigateBack(ActionEvent event){
-        Load.navigate(event, "CustomerScreen.fxml");
-    }
-
+    // Implementing quicksort for food menu and displaying them in table
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sortChoice.getItems().addAll("Name", "Category", "Price");
@@ -114,11 +110,16 @@ public class MenuCtrl implements Initializable {
         });
     }
 
+    // code block used many times / to prevent repetition
     public void setSortedTableValue(int[] indexes){
         for (int i : indexes)
             foodObservableList.add(foodList.get(i));
 
         menuTable.setItems(foodObservableList);
         dec = !dec;
+    }
+
+    public void navigateBack(ActionEvent event){
+        Load.navigate(event, "CustomerScreen.fxml");
     }
 }
