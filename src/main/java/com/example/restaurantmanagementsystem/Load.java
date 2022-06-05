@@ -15,6 +15,7 @@ import static com.example.restaurantmanagementsystem.Kitchen.foodList;
 import static com.example.restaurantmanagementsystem.GalleryCtrl.pathList;
 
 public class Load {
+    // Function to load some random food and images for demo
     public static void initializeData(){
         foodList.add(new Food("Kabsa", "Arabic", 60));
         foodList.add(new Food("Shawarma", "Arabic", 20));
@@ -31,6 +32,7 @@ public class Load {
         pathList.add("file:src/main/java/com/example/restaurantmanagementsystem/Images/p4.jpeg");
     }
 
+    // Function to navigate to pages by entering their path parameter
     public static void navigate(ActionEvent event, String path){
         try {
             Parent parent = FXMLLoader.load(Objects.requireNonNull(Load.class.getResource(path)));
@@ -44,12 +46,14 @@ public class Load {
         }
     }
 
+    // Function to throw a simple error alert popup
     public static void errorAlert(String header){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(header);
         alert.showAndWait();
     }
 
+    // Function to throw a simple informative alert popup
     public static void infoAlert(String header, String content){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(header);
@@ -57,6 +61,7 @@ public class Load {
         alert.showAndWait();
     }
 
+    // Function to check if input is numerical
     public static boolean isNumeric(String strNum) {
         if (strNum == null)
             return false;

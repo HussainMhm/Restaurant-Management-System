@@ -27,7 +27,6 @@ public class CustomerScreenCtrl implements Initializable {
     private TableView<Order> orderQueueTable;
     @FXML
     private TableColumn<Order, String> peopleOrdersColumn;
-
     @FXML
     private TableView<Food> mealsStackTable;
     @FXML
@@ -35,9 +34,11 @@ public class CustomerScreenCtrl implements Initializable {
     @FXML
     private TableColumn<Food, Float> foodPriceColumn;
 
+    // Stack for new added meals
     Stack stack = new Stack();
     ObservableList<Food> stackList = FXCollections.observableArrayList();
 
+    // Push meals from (Kitchen) foodList to Stack
     public void addFoodToStack(){
         for (Food food : foodList)
             stack.push(food);
@@ -47,9 +48,11 @@ public class CustomerScreenCtrl implements Initializable {
             stackList.add(stack.pop());
     }
 
+    // Stack for customer orders
     Queue queue = new Queue();
     ObservableList<Order> queueList = FXCollections.observableArrayList();
 
+    // Enqueue orders from (Kitchen) orderList to Queue
     public void addOrdersToQueue(){
         for (Order order : orderList){
             queue.enqueue(order);
@@ -57,6 +60,7 @@ public class CustomerScreenCtrl implements Initializable {
         }
     }
 
+    // Displaying data in tableView's
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addFoodToStack();
@@ -70,6 +74,7 @@ public class CustomerScreenCtrl implements Initializable {
         orderQueueTable.setItems(queueList);
     }
 
+    // Navigation functions to other pages
     public void navigateMenuPage(ActionEvent event){
         Load.navigate(event, "Menu.fxml");
     }
