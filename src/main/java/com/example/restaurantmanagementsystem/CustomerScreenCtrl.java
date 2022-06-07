@@ -52,6 +52,16 @@ public class CustomerScreenCtrl implements Initializable {
     Queue queue = new Queue();
     ObservableList<Order> queueList = FXCollections.observableArrayList();
 
+    BinaryTree tree = new BinaryTree();
+    public void addPriceToTree(){
+        for (Food food : foodList)
+            tree.insert((int) food.getPrice());
+    }
+
+    public void printPrices(){
+        tree.traverseInOrder();
+    }
+
     // Enqueue orders from (Kitchen) orderList to Queue
     public void addOrdersToQueue(){
         for (Order order : orderList){
