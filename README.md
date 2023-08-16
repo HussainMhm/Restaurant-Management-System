@@ -27,8 +27,3 @@ The Restaurant Management System is a Java-based application designed to simplif
 ## Contributing
 
 Contributions to the Restaurant Management System project are welcome! If you have any ideas or suggestions for improvement, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
